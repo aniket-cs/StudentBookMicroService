@@ -42,7 +42,9 @@ public class BookController {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     List<FieldErrorMessage> exceptionHandler(MethodArgumentNotValidException e){
        List<FieldError> fieldErrors = e.getBindingResult().getFieldErrors();
-       List<FieldErrorMessage> fieldErrorMessages = fieldErrors.stream().map(fieldError -> new FieldErrorMessage(fieldError.getField(), fieldError.getDefaultMessage())).collect(Collectors.toList());
+       List<FieldErrorMessage> fieldErrorMessages = fieldErrors.stream()
+               .map(fieldError -> new FieldErrorMessage(fieldError.getField(), fieldError.getDefaultMessage()))
+               .collect(Collectors.toList());
 
        return fieldErrorMessages;
 

@@ -24,6 +24,7 @@ public class Book {
     private String bookName;
 
     @NotNull(message = "You should provide proper book cost")
+    @Min(value = 1, message = "Minimum book cost should be 1.0 INR")
     private Double bookCost;
 
 
