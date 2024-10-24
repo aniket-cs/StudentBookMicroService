@@ -14,15 +14,15 @@ public class FooBarClient {
         this.client = client;
     }
 
-    public String getFooBarData() {
+    public ClientResponse getFooBarData() {
         WebResource webResource = client.resource(API_URL);
         ClientResponse response = webResource.get(ClientResponse.class);
 
         // If the status is 200, return the response entity
         if (response.getStatus() == 200) {
-            String result = response.getEntity(String.class);
-            response.close();
-            return result;
+//            String result = response.getEntity(String.class);
+//            response.close();
+            return response;
         } else {
             // If the status is not 200, throw an exception
             response.close();
