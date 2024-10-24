@@ -27,10 +27,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
-	implementation 'junit:junit:4.13.1'
+	implementation 'org.apache.logging.log4j:log4j-api:2.17.2'
+	implementation 'org.apache.logging.log4j:log4j-core:2.17.2'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
@@ -38,6 +40,15 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-stub-runner'
 	testImplementation "com.github.tomakehurst:wiremock-jre8:2.33.1"
+	// JUnit for unit testing
+	testImplementation 'junit:junit:4.13.1'
+	// Mockito for mocking
+	testImplementation 'org.mockito:mockito-core:3.5.0'
+
+	// Jersey Client
+	implementation 'com.sun.jersey:jersey-client:1.19.4'
+	implementation 'com.sun.jersey:jersey-core:1.19.4'
+
 }
 
 dependencyManagement {
