@@ -18,7 +18,7 @@ import javax.persistence.Id;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NonNull private Integer bookId;
 
     @NotNull(message = "You should provide proper book name")
